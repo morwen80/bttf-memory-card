@@ -13,6 +13,19 @@ h1 {
   font-weight: 700;
 }
 
+#controls {
+  padding-bottom: 1rem;
+}
+#reset {
+  margin: 0 auto;
+  display: block;
+  background-color: #BF382C;
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: .6rem 1rem;
+  border-radius: 5px;
+}
 wrapper {
 /*   position: relative; */
   margin: auto;
@@ -27,12 +40,12 @@ wrapper {
 
 .card {
   position: relative;
-  width: 21%;
-  height: 28%;
-  margin: 10px;
+  width: calc(25% - 10px);
+  height: calc(32% - 10px);
+  margin: 5px;
   transform: scale(1);
   transform-style: preserve-3d;
-  transition: transform 1s;
+  transition: transform .5s;
 
 }
 
