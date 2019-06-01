@@ -4,16 +4,22 @@
 
 body, html {
   height: 100vh;
-  background-color: #f4e9ba;
-/*   display: flex; */
+  background-color: #EFD347;
+  /* display: flex; */
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
 }
 
 wrapper {
 /*   position: relative; */
   margin: auto;
-  border: 3px dashed green;
-  width: 750px;
-  height: 750px;
+  border: 1px solid black;
+  background-color: #BF382C;
+  width: 650px;
+  height: 650px;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
@@ -21,8 +27,8 @@ wrapper {
 
 .card {
   position: relative;
-  width: 30%;
-  height: 39%;
+  width: 21%;
+  height: 28%;
   margin: 10px;
   transform: scale(1);
   transform-style: preserve-3d;
@@ -40,6 +46,7 @@ wrapper {
 
 .front, .back {
   position: absolute;
+  border: 1px solid #000;
   width: 100%;
   height: 100%;
   border-radius: 5px;
