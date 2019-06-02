@@ -1,11 +1,18 @@
-resetButton = document.querySelector('#reset')
-resetButton.addEventListener('click', playAgain);
+resetButton = document.querySelectorAll('.reset')
+resetButton.forEach(button => button.addEventListener('click', playAgain));
+
+const modal = document.querySelector('#congratsWindow');
+const closeWon = document.querySelector('.close');
+const wonPopup = document.querySelector('.won');
 
 const memoryCards = document.querySelectorAll('.card');
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+
+// ADD LINK TO GIFs OF BTTF THAT CAN APPEAR INSIDE THE MODAL AT RANDOM, OR BY CALLING AN EXTERNAL API
+const gifArray = [];
 
 function flipCard(){
   if (lockBoard) return;
@@ -22,6 +29,7 @@ function flipCard(){
     secondCard = this
 //     do cards match?
    checkForMatch();
+   openModal();
   }
 };
 
@@ -67,6 +75,27 @@ function shuffle(){
   });
 }
 
+// MODAL
+
+function openModal(){
+  if (document.querySelectorAll('.flip').length == 2) {
+  setTimeout(() => {
+    modal.style.visibility = "visible"
+  }, 1500)}
+}
+
+
+// function closeModal(){
+//     closeWon.addEventListener("click", function(e){
+//         modal.classList.remove("show");
+//         playAgain();
+//     });
+// }
+function closeModal(){
+    closeWon.addEventListener("click", function() {
+        modal.style.visibility = "hidden"
+    });
+}
 
 // (function shuffle(){
 //   memoryCards.forEach( card => {

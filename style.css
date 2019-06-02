@@ -21,7 +21,7 @@ h1 {
 #controls {
   padding-bottom: 1rem;
 }
-#reset {
+.reset {
   margin: 0 auto;
   display: block;
   background-color: #BF382C;
@@ -73,4 +73,43 @@ wrapper {
 }
 .front {
   transform: rotateY(180deg);
+}
+
+/*  modal */
+#congratsWindow {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.5);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 1;
+}
+
+.won {
+	margin: 70px auto;
+	padding: 20px;
+	background: #ffffff;
+	border-radius: 5px;
+	width: 55%;
+	position: relative;
+	transition: all 5s ease-in-out;
+}
+.won h2 {
+	margin-top: 0;
+	color: #BF382C;
+  text-align: center;
+	font-family: 'Passion One', cursive;
+  font-size: 2rem;
+}
+
+.close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	color: #333;
 }

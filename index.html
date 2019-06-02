@@ -11,7 +11,7 @@
     <h1>BTTF Memory Card Game</h1>
 
     <div id="controls">
-      <button id="reset">play again <i class="fas fa-sync-alt"></i></button>
+      <button class="reset">play again <i class="fas fa-sync-alt"></i></button>
     </div>
     <wrapper>
     <div class="card" data-char="biff3">
@@ -71,6 +71,17 @@
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
 </wrapper>
+
+<div id="congratsWindow" class="overlay">
+  <div class="won">
+    <span class="close"><i class="fas fa-times"></i></span>
+    <h2>You won!</h2>
+    <h3>Here's a funny gif as a prize</h3>
+    <!--  INSERT GIF -->
+    <button class="reset">Play again?</button>
+    </div>
+
+  </div>
 <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
