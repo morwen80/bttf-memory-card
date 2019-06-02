@@ -97,13 +97,6 @@ function closeModal(){
 }
 
 
-// (function shuffle(){
-//   memoryCards.forEach( card => {
-//     let randomCard = Math.floor(Math.random() * 12);
-//     card.style.order = randomCard;
-//   });
-// })();
-
 memoryCards.forEach( card => card.addEventListener('click', flipCard));
 
 shuffle();

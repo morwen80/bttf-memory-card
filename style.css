@@ -18,19 +18,30 @@ h1 {
   font-family: 'Passion One', cursive;
 }
 
+/* CONTROL BUTTONS */
 #controls {
   padding-bottom: 1rem;
-}
-.reset {
+  display: inline-block;
   margin: 0 auto;
-  display: block;
-  background-color: #BF382C;
-  color: #000;
+}
+#controls button {
   font-weight: 700;
   font-size: 1rem;
   padding: .6rem 1rem;
   border-radius: 5px;
 }
+#startTimer {
+  background-color: orange;
+  color: #000;
+}
+.reset {
+  background-color: #BF382C;
+  color: #000;
+}
+
+
+
+/*  GAME BOARD */
 wrapper {
 /*   position: relative; */
   margin: auto;
