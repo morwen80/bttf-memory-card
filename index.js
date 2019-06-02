@@ -72,8 +72,8 @@ function resetBoard(){
 }
 
 function playAgain(){
-  resetTimer();
   shuffle();
+  resetTimer();
   memoryCards.forEach( card => card.classList.remove('flip'));
   memoryCards.forEach( card => card.addEventListener('click', flipCard));
 }
@@ -88,7 +88,7 @@ function shuffle(){
 // MODAL
 function openModal(){
   isModalOpen = true;
-  if (document.querySelectorAll('.flip').length == 4) {
+  if (document.querySelectorAll('.flip').length == 2) {
   stopTimer();
 
   setTimeout(() => {
@@ -99,22 +99,50 @@ function openModal(){
 function closeModal(){
   if (isModalOpen) {
     modal.style.visibility = "hidden";
-    resetTimer();
+    stopTimer();
   }
   isModalOpen = false;
-
 };
 
 
 // TIMER
 let second = 0;
 let minute = 0;
-// var timer = document.querySelector(".timer");
+
 let howLong;
 
+// function resetTimer(){
+//   stopTimer();
+//   timerBtn.innerHTML = `0 : 0
+//   <i class="fas fa-hourglass-start"></i>
+//   `
+// }
+
+// howLong = setInterval(backTimer, 1000);
+//
+// function backTimer(){
+//   timerBtn.innerHTML = `${minute}: ${second}
+//   <i class="fas fa-hourglass-start rotate"></i>
+//   `
+//   second++;
+//   if(second == 60){
+//       minute++;
+//       second = 0;
+//   }
+// }
+
+// function stopTimer(){
+//   let result = `${minute} : ${second}`;
+//   finalTime.innerHTML = result;
+//
+//   clearInterval(howLong);
+//   isTimerStarted = false;
+// }
+
 function resetTimer(){
-  stopTimer();
-  timerBtn.innerHTML = `0 : 0
+  second = 0;
+  minute = 0;
+  timerBtn.innerHTML = `${minute}: ${second}
   <i class="fas fa-hourglass-start"></i>
   `
 }
@@ -130,23 +158,29 @@ function startTimer(){
             minute++;
             second = 0;
         }
-        // if(minute == 60){
-        //     hour++;
-        //     minute = 0;
-        // }
+        if(minute == 60){
+            hour++;
+            minute = 0;
+        }
     },1000);
 }
 
-
 function stopTimer(){
-  if(isTimerStarted){
-    let result = `${minute} : ${second}`;
-    finalTime.innerHTML = result;
-    clearInterval(howLong);
-
-  }
-  isTimerStarted = false;
+  let result = `${minute} : ${second - 1}`;
+      finalTime.innerHTML = result;
+      clearInterval(howLong);
+      isTimerStarted = false;
 }
+
+// function stopTimer(){
+//   if(isTimerStarted){
+//     let result = `${minute} : ${second}`;
+//     finalTime.innerHTML = result;
+//     clearInterval(howLong);
+//   }
+//
+//   isTimerStarted = false;
+// }
 
 
 
