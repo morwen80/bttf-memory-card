@@ -1,12 +1,16 @@
 resetButton = document.querySelectorAll('.reset')
 resetButton.forEach(button => button.addEventListener('click', playAgain));
 
+
 const modal = document.querySelector('#congratsWindow');
-const closeWon = document.querySelector('.close');
+const closeWon = document.querySelector('.close')
+closeWon.addEventListener('click', closeModal);
+
 const wonPopup = document.querySelector('.won');
 
 const memoryCards = document.querySelectorAll('.card');
 
+let isModalOpen = false;
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -78,24 +82,20 @@ function shuffle(){
 // MODAL
 
 function openModal(){
+  isModalOpen = true;
   if (document.querySelectorAll('.flip').length == 2) {
   setTimeout(() => {
     modal.style.visibility = "visible"
-  }, 1500)}
-}
+  }, 1500)};
+};
 
-
-// function closeModal(){
-//     closeWon.addEventListener("click", function(e){
-//         modal.classList.remove("show");
-//         playAgain();
-//     });
-// }
 function closeModal(){
-    closeWon.addEventListener("click", function() {
-        modal.style.visibility = "hidden"
-    });
+  if (isModalOpen) {
+    modal.style.visibility = "hidden"
+  }
+  isModalOpen = false;
 }
+
 
 // (function shuffle(){
 //   memoryCards.forEach( card => {

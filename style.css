@@ -88,6 +88,7 @@ wrapper {
 	opacity: 1;
 }
 
+
 .won {
 	margin: 70px auto;
 	padding: 20px;
@@ -95,7 +96,7 @@ wrapper {
 	border-radius: 5px;
 	width: 55%;
 	position: relative;
-	transition: all 5s ease-in-out;
+	/* transition: all 5s ease-in-out; */
 }
 .won h2 {
 	margin-top: 0;
@@ -112,4 +113,7 @@ wrapper {
 	transition: all 200ms;
 	font-size: 30px;
 	color: #333;
+}
+.close:hover {
+  color: red;
 }
