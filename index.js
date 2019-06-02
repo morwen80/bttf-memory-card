@@ -1,16 +1,21 @@
 resetButton = document.querySelectorAll('.reset')
 resetButton.forEach(button => button.addEventListener('click', playAgain));
 
+timerBtn = document.querySelector('#startTimer');
+timerBtn.addEventListener('click', startTimer)
 
 const modal = document.querySelector('#congratsWindow');
 const closeWon = document.querySelector('.close')
 closeWon.addEventListener('click', closeModal);
 
 const wonPopup = document.querySelector('.won');
+const finalTime = document.querySelector('#finalTime');
 
 const memoryCards = document.querySelectorAll('.card');
 
 let isModalOpen = false;
+// let timer = 0;
+let isTimerStarted = false;
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -67,6 +72,7 @@ function resetBoard(){
 }
 
 function playAgain(){
+  resetTimer();
   shuffle();
   memoryCards.forEach( card => card.classList.remove('flip'));
   memoryCards.forEach( card => card.addEventListener('click', flipCard));
@@ -80,10 +86,11 @@ function shuffle(){
 }
 
 // MODAL
-
 function openModal(){
   isModalOpen = true;
-  if (document.querySelectorAll('.flip').length == 2) {
+  if (document.querySelectorAll('.flip').length == 4) {
+  stopTimer();
+
   setTimeout(() => {
     modal.style.visibility = "visible"
   }, 1500)};
@@ -91,10 +98,56 @@ function openModal(){
 
 function closeModal(){
   if (isModalOpen) {
-    modal.style.visibility = "hidden"
+    modal.style.visibility = "hidden";
+    resetTimer();
   }
   isModalOpen = false;
+
+};
+
+
+// TIMER
+let second = 0;
+let minute = 0;
+// var timer = document.querySelector(".timer");
+let howLong;
+
+function resetTimer(){
+  stopTimer();
+  timerBtn.innerHTML = `0 : 0
+  <i class="fas fa-hourglass-start"></i>
+  `
 }
+
+function startTimer(){
+  isTimerStarted = true;
+    howLong = setInterval(function(){
+        timerBtn.innerHTML = `${minute}: ${second}
+        <i class="fas fa-hourglass-start rotate"></i>
+        `
+        second++;
+        if(second == 60){
+            minute++;
+            second = 0;
+        }
+        // if(minute == 60){
+        //     hour++;
+        //     minute = 0;
+        // }
+    },1000);
+}
+
+
+function stopTimer(){
+  if(isTimerStarted){
+    let result = `${minute} : ${second}`;
+    finalTime.innerHTML = result;
+    clearInterval(howLong);
+
+  }
+  isTimerStarted = false;
+}
+
 
 
 memoryCards.forEach( card => card.addEventListener('click', flipCard));
