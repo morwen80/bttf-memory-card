@@ -1,5 +1,7 @@
 resetButton = document.querySelectorAll('.reset')
 resetButton.forEach(button => button.addEventListener('click', playAgain));
+replayBtn = document.querySelector('.fa-sync-alt')
+replayBtn.addEventListener('click', spinningIcon)
 
 timerBtn = document.querySelector('#startTimer');
 timerBtn.addEventListener('click', startTimer)
@@ -76,6 +78,11 @@ function playAgain(){
   resetTimer();
   memoryCards.forEach( card => card.classList.remove('flip'));
   memoryCards.forEach( card => card.addEventListener('click', flipCard));
+}
+
+
+function spinningIcon(){
+  replayBtn.classList.add('rotate')
 }
 
 function shuffle(){

@@ -13,61 +13,71 @@
     <div id="controls">
       <button id="startTimer">timer <i class="fas fa-hourglass-start"></i></button>
       <button class="reset">play again <i class="fas fa-sync-alt"></i></button>
+
+      <div class="dropdown">
+        <button class="levels">levels</button>
+        <div class="levels-dropdown">
+          <a id="lev-easy" href="#">easy</a>
+          <a id="lev-medium" href="#">medium</a>
+          <a id="lev-hard" href="#">hard</a>
+        </div>
+      </div>
     </div>
     <wrapper>
-    <div class="card" data-char="biff3">
+    <div class="card l1" data-char="biff3">
        <img class="front" src="http://valeriaragonese.altervista.org/memory-card-game/img/image1.png"/>
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
 
-     <div class="card" data-char="biff3">
+     <div class="card l1" data-char="biff3">
        <img class="front" src="http://valeriaragonese.altervista.org/memory-card-game/img/image1.png"/>
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
 
-     <div class="card" data-char="doc3">
+     <div class="card l1" data-char="doc3">
        <img class="front" src="http://valeriaragonese.altervista.org/memory-card-game/img/image2.png"/>
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
 
-     <div class="card" data-char="doc3">
+     <div class="card l1" data-char="doc3">
        <img class="front" src="http://valeriaragonese.altervista.org/memory-card-game/img/image2.png"/>
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
 
-     <div class="card" data-char="marty">
+     <div class="card l1" data-char="marty">
        <img class="front" src="http://valeriaragonese.altervista.org/memory-card-game/img/image3.png"/>
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
 
-     <div class="card" data-char="marty">
+     <div class="card l1" data-char="marty">
        <img class="front" src="http://valeriaragonese.altervista.org/memory-card-game/img/image3.png"/>
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
 
-  <div class="card" data-char="flux">
+  <div class="card l2" data-char="flux">
        <img class="front" src="http://valeriaragonese.altervista.org/memory-card-game/img/image4.png"/>
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
-<div class="card" data-char="flux">
+<div class="card l2" data-char="flux">
        <img class="front" src="http://valeriaragonese.altervista.org/memory-card-game/img/image4.png"/>
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
 
-  <div class="card" data-char="meet">
+  <div class="card l2" data-char="meet">
        <img class="front" src="http://valeriaragonese.altervista.org/memory-card-game/img/image5.png"/>
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
-  <div class="card" data-char="meet">
+  <div class="card l2" data-char="meet">
        <img class="front" src="http://valeriaragonese.altervista.org/memory-card-game/img/image5.png"/>
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
 
-  <div class="card" data-char="chapel">
+  <div class="card l2" data-char="chapel">
        <img class="front" src="http://valeriaragonese.altervista.org/memory-card-game/img/image6.png"/>
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
-  <div class="card" data-char="chapel">
+
+  <div class="card l2" data-char="chapel">
        <img class="front" src="http://valeriaragonese.altervista.org/memory-card-game/img/image6.png"/>
         <img class="back" src="http://valeriaragonese.altervista.org/memory-card-game/img/back.png"/>
     </div>
@@ -78,9 +88,7 @@
     <span class="close"><i class="fas fa-times"></i></span>
     <h2>Game Over!</h2>
     <h3>Final Time: <span id="finalTime"></span></h3>
-    <h3>Here's a funny gif as a prize</h3>
-    <!--  INSERT GIF -->
-    <button class="reset">Play again?</button>
+    <img id="happyGif" src="images/gifs/01.gif" />
     </div>
 
   </div>
