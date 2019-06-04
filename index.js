@@ -26,18 +26,17 @@ let firstCard, secondCard;
 const gifArray = [];
 
 function flipCard(){
-  isGameStarted = true;
-  isTimerRunning = true;
   if (lockBoard) return;
   if (this === firstCard) return;
 
-  this.classList.add('flip');
+  // isGameStarted = true;
+  // isTimerRunning = true;
 
+  this.classList.add('flip');
 
   if (!hasFlippedCard) {
     hasFlippedCard = true;
     firstCard = this;
-
   }
   else {
     hasFlippedCard = false;
@@ -47,7 +46,8 @@ function flipCard(){
    checkForMatch();
    openModal();
   }
-
+  isGameStarted = true;
+  isTimerRunning = true;
 };
 
 function checkForMatch(){
@@ -56,7 +56,7 @@ function checkForMatch(){
 }
 
 function disableCards(){
-    isGameStarted = true;
+  isGameStarted = true;
   firstCard.removeEventListener('click',flipCard);
   secondCard.removeEventListener('click',flipCard);
 
@@ -80,22 +80,23 @@ function resetBoard(){
   firstCard = null;
   secondCard = null;
   isGameStarted = true;
+  isTimerRunning = true;
+}
+
+function playAgain(){
+  location.reload();
 }
 
 // function playAgain(){
-//   location.reload();
+//   shuffle();
+//   isTimerRunning = false;
+//   isGameStarted = true;
+//   stopTimer();
+//   resetTimer();
+//
+//   memoryCards.forEach( card => card.classList.remove('flip'));
+//   memoryCards.forEach( card => card.addEventListener('click', flipCard));
 // }
-
-function playAgain(){
-  shuffle();
-  isTimerRunning = false;
-  isGameStarted = true;
-  stopTimer();
-  resetTimer();
-
-  memoryCards.forEach( card => card.classList.remove('flip'));
-  memoryCards.forEach( card => card.addEventListener('click', flipCard));
-}
 
 
 function spinningIcon(){

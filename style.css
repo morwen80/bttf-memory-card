@@ -104,17 +104,24 @@ wrapper {
   perspective: 1000px;
 }
 
+.l1 {
+  width: calc(33% - 10px);
+  height: calc(45%);
+}
+
+.l2 {
+  width: calc(25% - 10px);
+  height: calc(32% - 10px);
+}
 .card {
   position: relative;
-  /* width: calc(25% - 10px);
-  height: calc(32% - 10px); */
+
   width: calc(33% - 10px);
   height: calc(45%);
   margin: 5px;
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform .5s;
-
 }
 
 .card:active {
