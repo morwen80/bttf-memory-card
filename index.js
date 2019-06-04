@@ -34,6 +34,7 @@ function flipCard(){
   if (!hasFlippedCard) {
     hasFlippedCard = true;
     firstCard = this;
+    startTimer();
   }
   else {
     hasFlippedCard = false;
@@ -95,9 +96,8 @@ function shuffle(){
 // MODAL
 function openModal(){
   isModalOpen = true;
-  if (document.querySelectorAll('.flip').length == 2) {
-  stopTimer();
-
+  if (document.querySelectorAll('.flip').length == 6) {
+  timerResult();
   setTimeout(() => {
     modal.style.visibility = "visible"
   }, 1500)};
@@ -106,7 +106,9 @@ function openModal(){
 function closeModal(){
   if (isModalOpen) {
     modal.style.visibility = "hidden";
-    stopTimer();
+    // timerResult();
+    resetTimer();
+
   }
   isModalOpen = false;
 };
@@ -118,78 +120,56 @@ let minute = 0;
 
 let howLong;
 
-// function resetTimer(){
-//   stopTimer();
-//   timerBtn.innerHTML = `0 : 0
-//   <i class="fas fa-hourglass-start"></i>
-//   `
-// }
-
-// howLong = setInterval(backTimer, 1000);
-//
-// function backTimer(){
-//   timerBtn.innerHTML = `${minute}: ${second}
-//   <i class="fas fa-hourglass-start rotate"></i>
-//   `
-//   second++;
-//   if(second == 60){
-//       minute++;
-//       second = 0;
-//   }
-// }
-
-// function stopTimer(){
-//   let result = `${minute} : ${second}`;
-//   finalTime.innerHTML = result;
-//
-//   clearInterval(howLong);
-//   isTimerStarted = false;
-// }
-
-function resetTimer(){
-  second = 0;
-  minute = 0;
-  timerBtn.innerHTML = `${minute}: ${second}
-  <i class="fas fa-hourglass-start"></i>
-  `
-}
-
 function startTimer(){
-  isTimerStarted = true;
-    howLong = setInterval(function(){
-        timerBtn.innerHTML = `${minute}: ${second}
-        <i class="fas fa-hourglass-start rotate"></i>
-        `
-        second++;
-        if(second == 60){
-            minute++;
-            second = 0;
-        }
-        if(minute == 60){
-            hour++;
-            minute = 0;
-        }
-    },1000);
+  if (document.querySelectorAll('.flip').length !== 0){
+  timerBtn.innerHTML = `${minute}: ${second}
+  <i class="fas fa-hourglass-start rotate"></i>
+  `
+  second++;
+  if(second == 60){
+      minute++;
+      second = 0;
+    }
+  }
 }
+
+howLong = setInterval(startTimer, 1000);
 
 function stopTimer(){
-  let result = `${minute} : ${second - 1}`;
-      finalTime.innerHTML = result;
-      clearInterval(howLong);
-      isTimerStarted = false;
+  clearInterval(howLong)
 }
 
-// function stopTimer(){
-//   if(isTimerStarted){
-//     let result = `${minute} : ${second}`;
-//     finalTime.innerHTML = result;
-//     clearInterval(howLong);
-//   }
-//
-//   isTimerStarted = false;
+
+
+// function startTimer(){
+//   isTimerStarted = true;
+//     howLong = setInterval(function(){
+//         timerBtn.innerHTML = `${minute}: ${second}
+//         <i class="fas fa-hourglass-start rotate"></i>
+//         `
+//         second++;
+//         if(second == 60){
+//             minute++;
+//             second = 0;
+//         }
+//         // if(minute == 60){
+//         //     hour++;
+//         //     minute = 0;
+//         // }
+//     },1000);
 // }
 
+function timerResult(){
+  let result = `${minute} : ${second}`;
+      finalTime.innerHTML = result;
+}
 
+function resetTimer(){
+  timerBtn.innerHTML = `
+    timer <i class="fas fa-hourglass-start"></i>
+  `
+    clearInterval(howLong)
+};
 
 memoryCards.forEach( card => card.addEventListener('click', flipCard));
 
