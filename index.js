@@ -12,12 +12,13 @@ let easy = document.querySelector('#lev1')
 let medium = document.querySelector('#lev2')
 let hard = document.querySelector('#lev3')
 
+let easyCards = document.querySelectorAll('.easy');
+let mediumCards = document.querySelectorAll('.easyMedium');
+let hardCards = document.querySelectorAll('.easyHard');
 
 // select Easy Level
 easy.addEventListener('click', () => {
-
-
-  let easyCards = document.querySelectorAll('.easy');
+  resetLevel();
     easyCards.forEach(card => card.classList.remove('hiddenLevel'))
     easyCards.forEach(card => card.classList.add('visibleLevel'))
     wrapper.style.width = "30%"
@@ -25,7 +26,7 @@ easy.addEventListener('click', () => {
 
 // select Medium Level
 medium.addEventListener('click', () => {
-  let mediumCards = document.querySelectorAll('.medium');
+  resetLevel();
     mediumCards.forEach(card => card.classList.remove('hiddenLevel'))
     mediumCards.forEach(card => card.classList.add('visibleLevel'))
     wrapper.style.width = "55%"
@@ -33,16 +34,16 @@ medium.addEventListener('click', () => {
 
 // select Hard Level
 hard.addEventListener('click', () => {
-  let hardCards = document.querySelectorAll('.hard');
+  resetLevel();
     hardCards.forEach(card => card.classList.remove('hiddenLevel'))
     hardCards.forEach(card => card.classList.add('visibleLevel'))
     wrapper.style.width = "65%"
 })
 
-const resetLevel = (e) => {
-  alert("it works")
-  e.target.classList.remove('visibleLevel')
-  e.target.classList.remove('hiddenLevel')
+const resetLevel = () => {
+  let card = document.querySelectorAll('.card')
+  card.forEach(card => card.classList.add("hiddenLevel"))
+  card.forEach(card => card.classList.remove('visibleLevel'))
 }
 
 // END LEVEL SECTION
