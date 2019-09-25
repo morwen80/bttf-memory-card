@@ -79,12 +79,7 @@ wrapper {
   box-sizing: border-box;
   border: 1px solid black;
   background-color: #BF382C;
-
-  /* easy level width: 25% */
-  width: 30%;
-
-   /* width: 765px; */
-  /* height: 650px; */
+  width: 28%;
   height: auto;
   display: flex;
   flex-wrap: wrap;

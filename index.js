@@ -18,7 +18,7 @@ easy.addEventListener('click', () => {
   resetLevel();
     easyCards.forEach(card => card.classList.remove('hiddenLevel'))
     easyCards.forEach(card => card.classList.add('visibleLevel'))
-    wrapper.style.width = "30%"
+    wrapper.style.width = "28%"
 })
 
 // select Medium Level
@@ -26,7 +26,7 @@ medium.addEventListener('click', () => {
   resetLevel();
     mediumCards.forEach(card => card.classList.remove('hiddenLevel'))
     mediumCards.forEach(card => card.classList.add('visibleLevel'))
-    wrapper.style.width = "55%"
+    wrapper.style.width = "54%"
 })
 
 // select Hard Level
@@ -34,7 +34,7 @@ hard.addEventListener('click', () => {
   resetLevel();
     hardCards.forEach(card => card.classList.remove('hiddenLevel'))
     hardCards.forEach(card => card.classList.add('visibleLevel'))
-    wrapper.style.width = "65%"
+    wrapper.style.width = "55%"
 })
 
 const resetLevel = () => {
@@ -139,7 +139,7 @@ function shuffle(){
 function openModal(){
   isGameStarted = false;
   isModalOpen = true;
-  if (document.querySelectorAll('.flip').length == 4) {
+  if (document.querySelectorAll('.flip').length == document.querySelectorAll('.visibleLevel').length) {
   timerResult();
   setTimeout(() => {
     modal.style.visibility = "visible"
