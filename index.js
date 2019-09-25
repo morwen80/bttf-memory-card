@@ -6,6 +6,23 @@ replayBtn.addEventListener('click', spinningIcon)
 timerBtn = document.querySelector('#startTimer');
 timerBtn.addEventListener('click', startTimer)
 
+// LEVELS
+let wrapper = document.querySelector('wrapper')
+let medium = document.querySelector('[value=medium]');
+
+
+// select Medium Level
+medium.addEventListener('keypress', () => {
+  let mediumCards = document.querySelectorAll('.medium');
+    mediumCards.forEach(card => card.classList.remove('hiddenLevel'))
+    mediumCards.forEach(card => card.classList.add('visibleLevel'))
+    // mediumCards.classList.remove('hiddenLevel')
+    // mediumCards.classList.add('visibleLevel')
+
+  wrapper.style.width("50%")
+})
+
+
 const modal = document.querySelector('#congratsWindow');
 const closeWon = document.querySelector('.close')
 closeWon.addEventListener('click', closeModal);
@@ -28,9 +45,6 @@ const gifArray = [];
 function flipCard(){
   if (lockBoard) return;
   if (this === firstCard) return;
-
-  // isGameStarted = true;
-  // isTimerRunning = true;
 
   this.classList.add('flip');
 
@@ -116,7 +130,7 @@ function shuffle(){
 function openModal(){
   isGameStarted = false;
   isModalOpen = true;
-  if (document.querySelectorAll('.flip').length == 6) {
+  if (document.querySelectorAll('.flip').length == 8) {
   timerResult();
   setTimeout(() => {
     modal.style.visibility = "visible"
@@ -197,8 +211,9 @@ function resetTimer(){
   timerBtn.innerHTML = `
     timer <i class="fas fa-hourglass-start"></i>
   `
-    // clearInterval(howLong);
 };
+
+
 
 memoryCards.forEach( card => card.addEventListener('click', flipCard));
 shuffle();
