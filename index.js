@@ -8,18 +8,14 @@ timerBtn.addEventListener('click', startTimer)
 
 // LEVELS
 let wrapper = document.querySelector('wrapper')
-let medium = document.querySelector('[value=medium]');
-
+let medium = document.querySelector('#lev1')
 
 // select Medium Level
-medium.addEventListener('keypress', () => {
+medium.addEventListener('click', () => {
   let mediumCards = document.querySelectorAll('.medium');
     mediumCards.forEach(card => card.classList.remove('hiddenLevel'))
     mediumCards.forEach(card => card.classList.add('visibleLevel'))
-    // mediumCards.classList.remove('hiddenLevel')
-    // mediumCards.classList.add('visibleLevel')
-
-  wrapper.style.width("50%")
+    wrapper.style.width = "55%"
 })
 
 
