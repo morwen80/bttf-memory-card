@@ -8,7 +8,20 @@ replayBtn.addEventListener('click', spinningIcon)
 
 // LEVELS
 let wrapper = document.querySelector('wrapper')
+let easy = document.querySelector('#lev1')
 let medium = document.querySelector('#lev2')
+let hard = document.querySelector('#lev3')
+
+
+// select Easy Level
+easy.addEventListener('click', () => {
+
+
+  let easyCards = document.querySelectorAll('.easy');
+    easyCards.forEach(card => card.classList.remove('hiddenLevel'))
+    easyCards.forEach(card => card.classList.add('visibleLevel'))
+    wrapper.style.width = "30%"
+})
 
 // select Medium Level
 medium.addEventListener('click', () => {
@@ -18,6 +31,21 @@ medium.addEventListener('click', () => {
     wrapper.style.width = "55%"
 })
 
+// select Hard Level
+hard.addEventListener('click', () => {
+  let hardCards = document.querySelectorAll('.hard');
+    hardCards.forEach(card => card.classList.remove('hiddenLevel'))
+    hardCards.forEach(card => card.classList.add('visibleLevel'))
+    wrapper.style.width = "65%"
+})
+
+const resetLevel = (e) => {
+  alert("it works")
+  e.target.classList.remove('visibleLevel')
+  e.target.classList.remove('hiddenLevel')
+}
+
+// END LEVEL SECTION
 
 const modal = document.querySelector('#congratsWindow');
 const closeWon = document.querySelector('.close')
