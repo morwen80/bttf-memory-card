@@ -57,37 +57,13 @@ h1 {
 }
 
 
-/* LEVELS DROPWDOWN */
-.levels {
+/* LEVELS BUTTONS */
+#lev1 {
   background-color: #4CAF50;
-  color: white;
 }
-
-.dropdown {
-  position: relative;
-  display: inline-block;
+#lev2 {
+  background-color: red;
 }
-
-.levels-dropdown {
-  display: none;
-  position: absolute;
-  background-color: #EFD347;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.levels-dropdown a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.levels-dropdown a:hover {background-color: #ddd;}
-.dropdown:hover .levels-dropdown {display: block;}
-.dropdown:hover .levels {background-color: #3e8e41;}
-
 
 .hiddenLevel {
   display: none;
@@ -95,6 +71,7 @@ h1 {
 .visibleLevel {
   display: flex;
 }
+
 /*  GAME BOARD */
 wrapper {
   margin: auto;

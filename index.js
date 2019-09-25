@@ -3,12 +3,12 @@ resetButton.forEach(button => button.addEventListener('click', playAgain));
 replayBtn = document.querySelector('.fa-sync-alt')
 replayBtn.addEventListener('click', spinningIcon)
 
-timerBtn = document.querySelector('#startTimer');
-timerBtn.addEventListener('click', startTimer)
+// timerBtn = document.querySelector('#startTimer');
+// timerBtn.addEventListener('click', startTimer)
 
 // LEVELS
 let wrapper = document.querySelector('wrapper')
-let medium = document.querySelector('#lev1')
+let medium = document.querySelector('#lev2')
 
 // select Medium Level
 medium.addEventListener('click', () => {
