@@ -4,7 +4,7 @@ replayBtn = document.querySelector('.fa-sync-alt')
 replayBtn.addEventListener('click', spinningIcon)
 
 // LEVELS
-let wrapper = document.querySelector('wrapper')
+let wrapper = document.querySelector('#wrapper')
 let easy = document.querySelector('#lev1')
 let medium = document.querySelector('#lev2')
 let hard = document.querySelector('#lev3')
@@ -18,7 +18,7 @@ easy.addEventListener('click', () => {
   resetLevel();
     easyCards.forEach(card => card.classList.remove('hiddenLevel'))
     easyCards.forEach(card => card.classList.add('visibleLevel'))
-    wrapper.style.width = "28%"
+    wrapper.id = "wrapper"
 })
 
 // select Medium Level
@@ -26,7 +26,7 @@ medium.addEventListener('click', () => {
   resetLevel();
     mediumCards.forEach(card => card.classList.remove('hiddenLevel'))
     mediumCards.forEach(card => card.classList.add('visibleLevel'))
-    wrapper.style.width = "54%"
+    wrapper.id = "wrapperMedium"
 })
 
 // select Hard Level
@@ -34,7 +34,7 @@ hard.addEventListener('click', () => {
   resetLevel();
     hardCards.forEach(card => card.classList.remove('hiddenLevel'))
     hardCards.forEach(card => card.classList.add('visibleLevel'))
-    wrapper.style.width = "55%"
+    wrapper.id = "wrapperHard"
 })
 
 const resetLevel = () => {

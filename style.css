@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Passion+One&display=swap');
 
+
 * {
   padding: 0;
 }
@@ -73,26 +74,31 @@ h1 {
 }
 
 /*  GAME BOARD */
-wrapper {
+#wrapper, #wrapperMedium, #wrapperHard {
   margin: auto;
   padding: 1rem;
   box-sizing: border-box;
   border: 1px solid black;
   background-color: #BF382C;
-  width: 28%;
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   perspective: 1000px;
 }
+#wrapper {
+  width: 28%;
+}
 
+#wrapperMedium {
+  width: 55%;
+}
+#wrapperHard {
+  width: 58%;
+}
 
 .card {
   align-self: center;
-  /* position: relative; */
-  /* width: calc(25% - 10px);
-  height: calc(32% - 10px); */
   width: 170px;
   height: 215px;
   margin: 5px;
@@ -192,13 +198,19 @@ wrapper {
 
 /*  MEDIA QUERY */
 @media only screen and (max-width: 600px) {
-  wrapper {
+  #wrapper {
     padding: .5rem;
-    width: 480px;
+    width: 95%;
+  }
+  #wrapperMedium {
+    width: 95%;
+  }
+  #wrapperHard {
+    width: 95%;
   }
   .card {
-    width: 105px;
-    height: 140px;
-    margin: 5px;
+    /* width: 10%;
+    height: 10%; */
+    /* margin: 5px; */
   }
 }
