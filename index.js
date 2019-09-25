@@ -3,9 +3,6 @@ resetButton.forEach(button => button.addEventListener('click', playAgain));
 replayBtn = document.querySelector('.fa-sync-alt')
 replayBtn.addEventListener('click', spinningIcon)
 
-// timerBtn = document.querySelector('#startTimer');
-// timerBtn.addEventListener('click', startTimer)
-
 // LEVELS
 let wrapper = document.querySelector('wrapper')
 let easy = document.querySelector('#lev1')
@@ -54,12 +51,11 @@ closeWon.addEventListener('click', closeModal);
 
 const wonPopup = document.querySelector('.won');
 const finalTime = document.querySelector('#finalTime');
-
 const memoryCards = document.querySelectorAll('.card');
 
 let isModalOpen = false;
 let isGameStarted = false;
-let isTimerRunning = false;
+let isTimerRunning = true;
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -126,18 +122,6 @@ function playAgain(){
   location.reload();
 }
 
-// function playAgain(){
-//   shuffle();
-//   isTimerRunning = false;
-//   isGameStarted = true;
-//   stopTimer();
-//   resetTimer();
-//
-//   memoryCards.forEach( card => card.classList.remove('flip'));
-//   memoryCards.forEach( card => card.addEventListener('click', flipCard));
-// }
-
-
 function spinningIcon(){
   replayBtn.classList.add('rotate')
 }
@@ -155,7 +139,7 @@ function shuffle(){
 function openModal(){
   isGameStarted = false;
   isModalOpen = true;
-  if (document.querySelectorAll('.flip').length == 8) {
+  if (document.querySelectorAll('.flip').length == 4) {
   timerResult();
   setTimeout(() => {
     modal.style.visibility = "visible"
@@ -183,10 +167,6 @@ function startTimer(){
   isTimerRunning = true;
 
   if (isGameStarted == true ){
-
-    timerBtn.innerHTML = `${minute}: ${second}
-    <i class="fas fa-hourglass-start rotate"></i>
-    `
     second++;
       if(second == 60){
         minute++;
@@ -203,26 +183,6 @@ function stopTimer(){
   clearInterval(howLong)
 }
 
-
-
-// function startTimer(){
-//   isTimerRunning = true;
-//     howLong = setInterval(function(){
-//         timerBtn.innerHTML = `${minute}: ${second}
-//         <i class="fas fa-hourglass-start rotate"></i>
-//         `
-//         second++;
-//         if(second == 60){
-//             minute++;
-//             second = 0;
-//         }
-//         // if(minute == 60){
-//         //     hour++;
-//         //     minute = 0;
-//         // }
-//     },1000);
-// }
-
 function timerResult(){
   let result = `${minute} : ${second}`;
       finalTime.innerHTML = result;
@@ -231,11 +191,6 @@ function timerResult(){
 function resetTimer(){
   isGameStarted = false;
   isTimerRunning = false;
-  // second = 0;
-  // minute = 0;
-  timerBtn.innerHTML = `
-    timer <i class="fas fa-hourglass-start"></i>
-  `
 };
 
 
