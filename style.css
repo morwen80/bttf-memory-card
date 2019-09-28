@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Passion+One|Iceberg&display=swap');
 
 :root {
   --yellow: #EFD347;
   --red: #BF382C;
   --blue: #19517C;
+  --grey: #333;
 }
 
 * {
   padding: 0;
+  margin: 0;
 }
 
 body, html {
@@ -16,16 +18,18 @@ body, html {
 }
 
 h1 {
+  padding: 1.5rem 0;
   text-align: center;
-  font-size: 3rem;
-  letter-spacing: .3rem;
+  font-size: 3.5rem;
+  letter-spacing: .1rem;
   font-weight: 700;
   font-family: 'Passion One', cursive;
+  color: var(--yellow);
 }
 
 /* CONTROL BUTTONS */
 #controls {
-  padding-bottom: 1rem;
+  padding: 1.5rem 0;
   display: flex;
   justify-content: center;
 }
@@ -64,7 +68,10 @@ h1 {
   background-color: #4CAF50;
 }
 #lev2 {
-  background-color: red;
+  background-color: var(--red);
+}
+#lev3 {
+  background-color: var(--yellow);
 }
 
 .hiddenLevel {
@@ -79,8 +86,6 @@ h1 {
   margin: auto;
   padding: 1rem;
   box-sizing: border-box;
-  /* border: 1px solid black;
-  background-color: #BF382C; */
   height: auto;
   display: flex;
   flex-wrap: wrap;
@@ -88,7 +93,7 @@ h1 {
   perspective: 1000px;
 }
 #wrapper {
-  width: 28%;
+  width: 30%;
 }
 
 #wrapperMedium {
@@ -115,7 +120,10 @@ h1 {
 .card.flip {
   transform: rotateY(180deg);
 }
-
+.card img {
+  max-width: 100%;
+  height: auto;
+}
 .front, .back {
   position: absolute;
   border: 1px solid #000;
@@ -153,54 +161,87 @@ h1 {
 }
 .won h2 {
 	margin-top: 0;
-	color: #BF382C;
+	color: var(--red);
   text-align: center;
 	font-family: 'Passion One', cursive;
   font-size: 2rem;
 }
-
+#finalTime {
+  font-family: 'Iceberg', cursive;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--blue);
+  font-style: italic;
+}
 .close {
 	position: absolute;
 	top: 20px;
 	right: 30px;
 	transition: all 200ms;
 	font-size: 30px;
-	color: #333;
+	color: var(--grey);
 }
 .close:hover {
-  color: red;
+  color: var(--red);
 }
 
 #happyGif {
   display: block;
+  padding-top: .5rem;
   padding-bottom: .5rem;
   margin: 0 auto;
 }
 
-
-
-
-
-
-/* .l1 {
-  width: calc(33% - 10px);
-  height: calc(45%);
+/* --------------------------------- MEDIA QUERY   */
+@media only screen and (max-width: 600px) {
+  html {
+    width: 95%;
+  }
+  h1 {
+    padding-bottom: 1rem;
+  }
+  #wrapper, #wrapperMedium, #wrapperHard {
+    width: 95%;
+  }
 }
 
-.l2 {
-   width: calc(25% - 10px);
-  height: calc(32% - 10px);
+@media only screen and (max-width: 768px) {
+  html {
+    width: 95%;
+  }
+  h1 {
+    padding-bottom: 1rem;
+  }
+  #wrapper, #wrapperMedium, #wrapperHard {
+    width: 95%;
+  }
 }
-
-.l3 {
-  display: none;
-}
-
 
 /*  MEDIA QUERY */
-@media only screen and (max-width: 600px) {
-  #wrapper {
+
+/* @media only screen and (max-width: 375px) {
+  #wrapper, #wrapperMedium, #wrapperHard {
     padding: .5rem;
+    width: 100%;
+  }
+  .card {
+    width: 44%;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+  #wrapper, #wrapperMedium, #wrapperHard {
+    padding: .5rem;
+    width: 100%;
+  }
+  .card {
+    width: 23%;
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 600px) {
+  #wrapper {
+    padding: .3rem;
     width: 95%;
   }
   #wrapperMedium {
@@ -210,8 +251,36 @@ h1 {
     width: 95%;
   }
   .card {
-    /* width: 10%;
-    height: 10%; */
-    /* margin: 5px; */
+    width: 40%;
   }
 }
+
+@media screen and (min-width: 600px) and (max-width: 900px){
+  #wrapper {
+    width: 90%;
+    background-color: red;
+  }
+  #wrapperMedium {
+    background-color: red;
+    width: 95%;
+  }
+  #wrapperHard {
+    background-color: red;
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: 900px){
+  #wrapper {
+    padding: .5rem;
+    width: 28%;
+
+  }
+  #wrapperMedium {
+    width: 55%;
+  }
+  #wrapperHard {
+    width: 58%;
+  }
+}
+*/

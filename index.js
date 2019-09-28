@@ -184,7 +184,7 @@ function stopTimer(){
 }
 
 function timerResult(){
-  let result = `${minute} : ${second}`;
+  let result = `Time of Completion: ${minute} : ${second}`;
       finalTime.innerHTML = result;
 }
 
@@ -192,8 +192,6 @@ function resetTimer(){
   isGameStarted = false;
   isTimerRunning = false;
 };
-
-
 
 memoryCards.forEach( card => card.addEventListener('click', flipCard));
 shuffle();
